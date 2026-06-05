@@ -1,8 +1,13 @@
-function ExpenseList() {
+function ExpenseList({ expenses }) {
   return (
     <div>
       <h2>Expenses</h2>
-      <p>No expenses added yet</p>
+
+      {expenses.map((expense, index) => (
+        <p key={index}>
+          {expense.name} - ₹{expense.amount}
+        </p>
+      ))}
     </div>
   );
 }
