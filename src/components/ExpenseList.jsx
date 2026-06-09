@@ -4,10 +4,13 @@ function ExpenseList({ expenses, deleteExpense }) {
       <h2>Expenses</h2>
 
       {expenses.map((expense, index) => (
-        <div key={index}>
-          <p>
+        <div
+          className="expense-item"
+          key={index}
+        >
+          <span>
             {expense.name} - ₹{expense.amount}
-          </p>
+          </span>
 
           <button
             onClick={() => deleteExpense(index)}

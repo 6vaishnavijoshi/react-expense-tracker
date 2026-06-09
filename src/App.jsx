@@ -3,7 +3,6 @@ import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 
 function App() {
-
   const [expenses, setExpenses] = useState(() => {
     const savedExpenses = localStorage.getItem("expenses");
 
@@ -28,18 +27,20 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Expense Tracker</h1>
+    <div className="container">
+      <div className="card">
+        <h1>Expense Tracker</h1>
 
-      <ExpenseForm
-        expenses={expenses}
-        setExpenses={setExpenses}
-      />
+        <ExpenseForm
+          expenses={expenses}
+          setExpenses={setExpenses}
+        />
 
-      <ExpenseList
-        expenses={expenses}
-        deleteExpense={deleteExpense}
-      />
+        <ExpenseList
+          expenses={expenses}
+          deleteExpense={deleteExpense}
+        />
+      </div>
     </div>
   );
 }
